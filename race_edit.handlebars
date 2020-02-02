@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  <h1>Edit Race Data</h1>
+
+  <div class="container">
+    <h3>Update Race {{race.id}}:</h3>
+    <form id="update_race" action="/race" method="post">
+    <div class="form-group">
+      <label for="new_track">Track</label>
+      <select class="custom-select" name="track" id="track_select">
+        {{#each track}}
+          <option value="{{id}}">{{track_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="new_race_date">Race Date</label>
+      <input type="date" name="date" class="form-control" value="{{race.race_date}}">
+    </div>
+    <div class="form-group">
+      <label for="new_race_weather">Weather</label>
+      <input type="text" name="weather" class="form-control" maxlength="255" value={{race.race_weather}}>
+    </div>
+    <div class="form-group">
+      <label for="new_winner">Winner</label>
+      <select class="custom-select" name="winner" id="winner_select">
+        {{#each driver}}
+          <option value="{{id}}">{{driver_name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-primary" onclick="updateRace({{race.id}})">Submit</button>
+  </form>
+  </div>
+</div>
