@@ -1,0 +1,92 @@
+<!--<div class="container-fluid">-->
+  <h1>Welcome to Reed and Ernest's Spike Page!</h1>
+
+  <div>
+    <table id = "table_resource">
+      <h3>Resource Data</h3>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each resource}}
+        <tr>
+          <th>{{id}}</th>
+          <td>{{resource_name}}</td>
+          <td><button onclick="deleteResource({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p>
+      <a href="/resource_add">
+        Add Resource
+      </a>
+    </p>
+  </div>
+
+  <div>
+    <table id = "table_product">
+      <h3>Product Data</h3>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each product}}
+        <tr>
+          <th>{{id}}</th>
+          <td>{{product_name}}</td>
+          <td><button onclick="deleteProduct({{id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p>
+      <a href="/product_add">
+        Add Product
+      </a>
+    </p>
+  </div>
+
+  <div>
+    <table id = "table_resource_product">
+      <h3>Recipe Data</h3>
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Resource Name</th>
+          <th>Resource Quantity</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each resource_product}}
+        <tr>
+          <th>{{product_name}}</th>
+          <td>{{resource_name}}</td>
+          <td>{{resource_quantity}}</td>
+          <td><button onclick="deleteResourceProduct({{resource_id}}, {{product_id}})">Delete</button></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <p>
+      <a href="/resource_product_add">
+        Add Recipe
+      </a>
+    </p>
+  </div>
+
+<script src="../js/delete.js"></script>
+<!--<script src="../js/jquery.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
